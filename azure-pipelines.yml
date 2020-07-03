@@ -58,9 +58,6 @@ stages:
                 script: |
                   sc.exe STOP txwinservice1
                   sc.exe DELETE txwinservice1
-            - task: Delay@1
-              inputs:
-                delayForMinutes: '2'
             - task: CopyFiles@2
               inputs:
                 SourceFolder: '$(Pipeline.Workspace)/winserviceartifact/s/WinService/bin/Release'

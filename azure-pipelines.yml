@@ -59,4 +59,14 @@ stages:
                 TargetFolder: 'D:\winservice'
                 CleanTargetFolder: true
                 OverWrite: true
-
+            
+            - task: PowerShellOnTargetMachines@3
+              inputs:
+                Machines: '40.69.145.189'
+                UserName: 'Anshuman'
+                UserPassword: '$(AzureVmPassword)'
+                InlineScript: |
+                  sc.exe STOP txwinservice1
+                  sc.exe DELETE txwinservice1
+                  sc.exe CREATE txwinservice1 start= auto binPath= D:\winservice\WinService.exe
+                  sc START winservice1

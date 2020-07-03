@@ -54,8 +54,9 @@ stages:
             steps:
             - task: CopyFiles@2
               inputs:
-                SourceFolder: '$(Pipeline.Workspace)/winserviceartifact'
+                SourceFolder: '$(Pipeline.Workspace)/winserviceartifact/s/WinService/binRelease'
                 Contents: '**'
                 TargetFolder: 'D:\winservice'
+                CleanTargetFolder: true
                 OverWrite: true
 

@@ -67,6 +67,5 @@ stages:
                   sc.exe STOP txwinservice1
                   sc.exe DELETE txwinservice1
                   sc.exe CREATE txwinservice1 start= auto binPath= D:\winservice\WinService.exe
-                  sc.exe START winservice1
-                errorActionPreference: 'continue'
+                  sc.exe START twinservice1
                               

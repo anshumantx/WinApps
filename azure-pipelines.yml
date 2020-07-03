@@ -57,7 +57,6 @@ stages:
                 SourceFolder: '$(Pipeline.Workspace)/winserviceartifact/s/WinService/bin/Release'
                 Contents: '**'
                 TargetFolder: 'D:\winservice'
-                CleanTargetFolder: true
                 OverWrite: true
             
             - task: PowerShellOnTargetMachines@3
